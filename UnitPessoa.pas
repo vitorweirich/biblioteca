@@ -27,6 +27,7 @@ type
     DBEdit4: TDBEdit;
     Label5: TLabel;
     DBEdit5: TDBEdit;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,5 +40,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFormPessoa.FormCreate(Sender: TObject);
+begin
+  BASE_CAMPOBUSCA := 'pessoa.nomepessoa';
+  inherited;
+
+end;
 
 end.

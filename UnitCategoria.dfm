@@ -4,25 +4,14 @@ inherited FormCategoria: TFormCategoria
   TextHeight = 13
   inherited PageControl1: TPageControl
     ActivePage = TabSheetCadastro
-    ExplicitWidth = 728
-    ExplicitHeight = 489
     inherited TabSheetConsulta: TTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       inherited Panel1: TPanel
         inherited EditBusca: TEdit
-          Height = 21
           ExplicitWidth = 590
-          ExplicitHeight = 21
-        end
-        inherited ButtonBusca: TButton
-          ExplicitLeft = 621
-        end
-      end
-      inherited Panel2: TPanel
-        inherited ButtonFechar: TButton
-          ExplicitLeft = 621
-        end
-        inherited ButtonSelecionar: TButton
-          ExplicitLeft = 542
         end
       end
     end

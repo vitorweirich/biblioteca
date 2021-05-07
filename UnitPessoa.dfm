@@ -1,29 +1,60 @@
 inherited FormPessoa: TFormPessoa
   Caption = 'Pessoas'
+  ClientWidth = 751
+  ExplicitWidth = 767
   PixelsPerInch = 96
   TextHeight = 13
   inherited PageControl1: TPageControl
-    ActivePage = TabSheetCadastro
-    ExplicitWidth = 728
-    ExplicitHeight = 489
+    Width = 751
     inherited TabSheetConsulta: TTabSheet
       inherited Panel1: TPanel
+        Width = 743
         inherited EditBusca: TEdit
-          Height = 21
-          ExplicitWidth = 590
-          ExplicitHeight = 21
+          Width = 694
         end
         inherited ButtonBusca: TButton
-          ExplicitLeft = 621
+          Left = 644
         end
       end
       inherited Panel2: TPanel
+        Width = 743
         inherited ButtonFechar: TButton
-          ExplicitLeft = 621
+          Left = 644
         end
         inherited ButtonSelecionar: TButton
-          ExplicitLeft = 542
+          Left = 565
         end
+      end
+      inherited DBGrid1: TDBGrid
+        Width = 743
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'idpessoa'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'nomepessoa'
+            Width = 161
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cpf'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'email'
+            Width = 168
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'telefone'
+            Visible = True
+          end>
       end
     end
     inherited TabSheetCadastro: TTabSheet
@@ -67,6 +98,12 @@ inherited FormPessoa: TFormPessoa
         Caption = 'Telefone'
         FocusControl = DBEdit5
       end
+      inherited Panel3: TPanel
+        Width = 743
+        inherited ButtonFechar2: TButton
+          Left = 652
+        end
+      end
       object DBEdit1: TDBEdit
         Left = 24
         Top = 40
@@ -94,6 +131,7 @@ inherited FormPessoa: TFormPessoa
         Height = 21
         DataField = 'cpf'
         DataSource = DataSource
+        MaxLength = 15
         TabOrder = 3
       end
       object DBEdit4: TDBEdit
@@ -112,6 +150,7 @@ inherited FormPessoa: TFormPessoa
         Height = 21
         DataField = 'telefone'
         DataSource = DataSource
+        MaxLength = 15
         TabOrder = 5
       end
     end
@@ -120,6 +159,8 @@ inherited FormPessoa: TFormPessoa
     Active = True
     SQL.Strings = (
       'select * from pessoa')
+    Left = 636
+    Top = 200
     object FDQueryidpessoa: TLargeintField
       DisplayLabel = 'C'#243'digo da Pessoa'
       DisplayWidth = 15
@@ -139,6 +180,7 @@ inherited FormPessoa: TFormPessoa
       DisplayWidth = 15
       FieldName = 'cpf'
       Origin = 'cpf'
+      EditMask = '999.999.999-999;1;_'
       Size = 15
     end
     object FDQueryemail: TWideStringField
@@ -153,6 +195,7 @@ inherited FormPessoa: TFormPessoa
       DisplayWidth = 30
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(99) 99999-9990;1;_'
       Size = 30
     end
   end

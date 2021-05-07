@@ -39,11 +39,19 @@ type
     procedure ButtonCancelarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure ButtonBuscaClick(Sender: TObject);
+    procedure EditBuscaChange(Sender: TObject);
+    procedure ButtonSelecionarClick(Sender: TObject);
   private
     { Private declarations }
+
     procedure ExibirTab(n: Integer);
+    procedure Buscar;
   public
     { Public declarations }
+
+    BASE_SQL: String;
+    BASE_CAMPOBUSCA: String;
   end;
 
 var
@@ -55,10 +63,37 @@ implementation
 
 uses UnitPrincipal;
 
+procedure TFormBase.Buscar;
+var
+  SQL: String;
+begin
+  SQL := BASE_SQL;
+
+  if EditBusca.Text <> '' then
+  begin
+    SQL := SQL + ' where upper('+BASE_CAMPOBUSCA+') like upper('+
+    QuotedStr('%'+EditBusca.Text+'%') +')';
+  end;
+
+  SQL := SQL + ' order by ' + BASE_CAMPOBUSCA;
+
+  FDQuery.Close;
+  FDQuery.SQL.Text := SQL;
+  FDQuery.Open();
+end;
+
 procedure TFormBase.ButtonAlterarClick(Sender: TObject);
 begin
+  if FDQuery.IsEmpty then
+    Exit;
+
   ExibirTab(1);
   FDQuery.Edit;
+end;
+
+procedure TFormBase.ButtonBuscaClick(Sender: TObject);
+begin
+  Buscar;
 end;
 
 procedure TFormBase.ButtonCancelarClick(Sender: TObject);
@@ -69,7 +104,12 @@ end;
 
 procedure TFormBase.ButtonExcluirClick(Sender: TObject);
 begin
-  FDQuery.Delete;
+  if FDQuery.IsEmpty then
+    Exit;
+  if MessageDlg('Deseja excluir o registro selecionado?', mtConfirmation, mbYesNo, 0) = mrYes then
+  begin
+    FDQuery.Delete;
+  end;
 end;
 
 procedure TFormBase.ButtonFecharClick(Sender: TObject);
@@ -90,13 +130,26 @@ begin
   //FDQuery.Post;
 end;
 
+procedure TFormBase.ButtonSelecionarClick(Sender: TObject);
+begin
+  if FDQuery.IsEmpty then
+    Exit;
+
+  ModalResult := mrOk;
+end;
+
+procedure TFormBase.EditBuscaChange(Sender: TObject);
+begin
+  Buscar;
+end;
+
 procedure TFormBase.ExibirTab(n: Integer);
 begin
   TabSheetConsulta.TabVisible := (not (n = 1));
   TabSheetCadastro.TabVisible := (n = 1);
   if n = 0 then
   begin
-    FDQuery.Refresh;
+    Buscar;
   end;
   PageControl1.ActivePageIndex := n;
 //  if n = 1 then
@@ -114,6 +167,7 @@ end;
 
 procedure TFormBase.FormCreate(Sender: TObject);
 begin
+  BASE_SQL := FDQuery.SQL.Text;
   ExibirTab(0);
 end;
 

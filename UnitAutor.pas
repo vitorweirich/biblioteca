@@ -18,6 +18,7 @@ type
     DBEdit1: TDBEdit;
     Label2: TLabel;
     DBEdit2: TDBEdit;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,5 +31,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFormAutor.FormCreate(Sender: TObject);
+begin
+  BASE_CAMPOBUSCA := 'autor.nomeautor';
+  inherited;
+end;
 
 end.

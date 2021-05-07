@@ -4,39 +4,16 @@ inherited FormEditora: TFormEditora
   TextHeight = 13
   inherited PageControl1: TPageControl
     ActivePage = TabSheetCadastro
-    ExplicitWidth = 728
-    ExplicitHeight = 489
     inherited TabSheetConsulta: TTabSheet
-      ExplicitWidth = 720
-      ExplicitHeight = 461
+      ExplicitLeft = 0
+      ExplicitTop = 0
       inherited Panel1: TPanel
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 720
         inherited EditBusca: TEdit
-          Height = 21
           ExplicitWidth = 590
-          ExplicitHeight = 21
-        end
-        inherited ButtonBusca: TButton
-          ExplicitLeft = 621
-        end
-      end
-      inherited Panel2: TPanel
-        ExplicitLeft = 0
-        ExplicitTop = 420
-        ExplicitWidth = 720
-        inherited ButtonFechar: TButton
-          ExplicitLeft = 621
-        end
-        inherited ButtonSelecionar: TButton
-          ExplicitLeft = 542
         end
       end
     end
     inherited TabSheetCadastro: TTabSheet
-      ExplicitWidth = 720
-      ExplicitHeight = 461
       object Label1: TLabel [0]
         Left = 24
         Top = 16
@@ -52,13 +29,6 @@ inherited FormEditora: TFormEditora
         Height = 13
         Caption = 'Nome da Editora'
         FocusControl = DBEdit2
-      end
-      inherited Panel3: TPanel
-        ExplicitTop = 420
-        ExplicitWidth = 720
-        inherited ButtonFechar2: TButton
-          ExplicitLeft = 629
-        end
       end
       object DBEdit1: TDBEdit
         Left = 24

@@ -8,7 +8,8 @@ uses
   UnitAutor in 'UnitAutor.pas' {FormAutor},
   UnitCategoria in 'UnitCategoria.pas' {FormCategoria},
   UnitLivro in 'UnitLivro.pas' {FormLivro},
-  UnitPessoa in 'UnitPessoa.pas' {FormPessoa};
+  UnitPessoa in 'UnitPessoa.pas' {FormPessoa},
+  UnitEmprestimoDevolucao in 'UnitEmprestimoDevolucao.pas' {FormBaseEmprestimoDevolucao};
 
 {$R *.res}
 

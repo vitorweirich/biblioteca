@@ -48,6 +48,7 @@ object FormPrincipal: TFormPrincipal
       Caption = 'Opera'#231#227'o'
       object Emprstimo1: TMenuItem
         Caption = 'Empr'#233'stimo e Devolu'#231#227'o'
+        OnClick = Emprstimo1Click
       end
     end
     object Relatrio1: TMenuItem

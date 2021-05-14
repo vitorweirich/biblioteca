@@ -58,6 +58,9 @@ type
     procedure ButtonBuscarEditoraClick(Sender: TObject);
     procedure ButtonBuscarCategoriaClick(Sender: TObject);
     procedure ButtonInserirClick(Sender: TObject);
+    procedure ButtonAdicionarAutorClick(Sender: TObject);
+    procedure ButtonExcluirAutorClick(Sender: TObject);
+    procedure ButtonAlterarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,6 +75,30 @@ implementation
 {$R *.dfm}
 
 uses UnitAutor, UnitCategoria, UnitEditora, UnitPrincipal;
+
+procedure TFormLivro.ButtonAdicionarAutorClick(Sender: TObject);
+var
+  form: TFormAutor;
+begin
+  form := TFormAutor.Create(Self);
+  form.ButtonSelecionar.Visible := true;
+  if form.ShowModal = mrOk then
+  begin
+    FDQueryAutores.Append;
+    FDQueryAutores.FieldByName('idautor').AsInteger := form.FDQuery.FieldByName('idautor').AsInteger;
+    FDQueryAutores.FieldByName('nomeautor').AsString := form.FDQuery.FieldByName('nomeautor').AsString;
+    FDQueryAutores.Post;
+    FDQueryAutores.Refresh;
+  end;
+
+  form.Free;
+end;
+
+procedure TFormLivro.ButtonAlterarClick(Sender: TObject);
+begin
+  inherited;
+  PanelAutores.Visible := true;
+end;
 
 procedure TFormLivro.ButtonBuscarCategoriaClick(Sender: TObject);
 var
@@ -103,10 +130,21 @@ begin
   form.Free;
 end;
 
+procedure TFormLivro.ButtonExcluirAutorClick(Sender: TObject);
+begin
+  if FDQueryAutores.IsEmpty then
+    Exit;
+  if MessageDlg('Deseja excluir o registro selecionado?', mtConfirmation, mbYesNo, 0) = mrYes then
+  begin
+    FDQueryAutores.Delete;
+  end;
+end;
+
 procedure TFormLivro.ButtonInserirClick(Sender: TObject);
 begin
   inherited;
   FDQuery.FieldByName('emprestado').AsInteger := 0;
+  PanelAutores.Visible := false;
 end;
 
 procedure TFormLivro.FormCreate(Sender: TObject);

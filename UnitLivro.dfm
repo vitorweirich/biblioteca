@@ -9,7 +9,6 @@ inherited FormLivro: TFormLivro
   inherited PageControl1: TPageControl
     Width = 874
     Height = 514
-    ActivePage = TabSheetCadastro
     ExplicitWidth = 874
     ExplicitHeight = 514
     inherited TabSheetConsulta: TTabSheet
@@ -91,8 +90,6 @@ inherited FormLivro: TFormLivro
       end
     end
     inherited TabSheetCadastro: TTabSheet
-      ExplicitLeft = 8
-      ExplicitTop = 56
       ExplicitWidth = 866
       ExplicitHeight = 486
       object Label1: TLabel [0]
@@ -347,20 +344,9 @@ inherited FormLivro: TFormLivro
           Columns = <
             item
               Expanded = False
-              FieldName = 'idautor'
-              Width = 52
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'idlivro'
-              Width = 46
-              Visible = True
-            end
-            item
-              Expanded = False
               FieldName = 'nomeautor'
-              Width = 210
+              Title.Caption = 'Nome do Autor'
+              Width = 329
               Visible = True
             end>
         end
@@ -371,6 +357,7 @@ inherited FormLivro: TFormLivro
           Height = 25
           Caption = 'Adiconar Autor'
           TabOrder = 1
+          OnClick = ButtonAdicionarAutorClick
         end
         object ButtonExcluirAutor: TButton
           Left = 160
@@ -379,6 +366,7 @@ inherited FormLivro: TFormLivro
           Height = 25
           Caption = 'Excluir Autor'
           TabOrder = 2
+          OnClick = ButtonExcluirAutorClick
         end
       end
     end

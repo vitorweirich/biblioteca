@@ -9,6 +9,7 @@ inherited FormLivro: TFormLivro
   inherited PageControl1: TPageControl
     Width = 874
     Height = 514
+    ActivePage = TabSheetCadastro
     ExplicitWidth = 874
     ExplicitHeight = 514
     inherited TabSheetConsulta: TTabSheet

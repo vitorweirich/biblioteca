@@ -6,23 +6,37 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
   TextHeight = 13
   inherited PageControl1: TPageControl
     Width = 774
+    ExplicitWidth = 774
     inherited TabSheetConsulta: TTabSheet
+      ExplicitWidth = 766
       inherited Panel1: TPanel
         Width = 766
+        ExplicitWidth = 766
         inherited EditBusca: TEdit
           Width = 717
+          ExplicitWidth = 717
         end
         inherited ButtonBusca: TButton
           Left = 667
+          ExplicitLeft = 667
         end
       end
       inherited Panel2: TPanel
         Width = 766
+        ExplicitWidth = 766
+        inherited ButtonAlterar: TButton
+          Caption = 'Devolver'
+        end
+        inherited ButtonExcluir: TButton
+          Visible = False
+        end
         inherited ButtonFechar: TButton
           Left = 667
+          ExplicitLeft = 667
         end
         inherited ButtonSelecionar: TButton
           Left = 588
+          ExplicitLeft = 588
         end
       end
       inherited DBGrid1: TDBGrid
@@ -66,6 +80,7 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
       end
     end
     inherited TabSheetCadastro: TTabSheet
+      ExplicitWidth = 766
       object Label1: TLabel [0]
         Left = 16
         Top = 8
@@ -132,8 +147,10 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
       end
       inherited Panel3: TPanel
         Width = 766
+        ExplicitWidth = 766
         inherited ButtonFechar2: TButton
           Left = 675
+          ExplicitLeft = 675
         end
       end
       object DBEdit1: TDBEdit
@@ -231,6 +248,7 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
         Height = 25
         Caption = 'Buscar'
         TabOrder = 9
+        OnClick = ButtonBuscarLivroClick
       end
       object ButtonBuscarPessoa: TButton
         Left = 480
@@ -239,6 +257,7 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
         Height = 25
         Caption = 'Buscar'
         TabOrder = 10
+        OnClick = ButtonBuscarPessoaClick
       end
     end
   end
@@ -299,5 +318,19 @@ inherited FormBaseEmprestimoDevolucao: TFormBaseEmprestimoDevolucao
   inherited DataSource: TDataSource
     Left = 692
     Top = 192
+  end
+  object FDQueryLivro: TFDQuery
+    Connection = FormPrincipal.FDConnection
+    SQL.Strings = (
+      'select * from livro where idlivro = :idlivro')
+    Left = 572
+    Top = 360
+    ParamData = <
+      item
+        Name = 'IDLIVRO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end

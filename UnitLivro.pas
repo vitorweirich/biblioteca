@@ -61,6 +61,7 @@ type
     procedure ButtonAdicionarAutorClick(Sender: TObject);
     procedure ButtonExcluirAutorClick(Sender: TObject);
     procedure ButtonAlterarClick(Sender: TObject);
+    procedure ButtonSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -145,6 +146,22 @@ begin
   inherited;
   FDQuery.FieldByName('emprestado').AsInteger := 0;
   PanelAutores.Visible := false;
+end;
+
+procedure TFormLivro.ButtonSalvarClick(Sender: TObject);
+var
+  x, y: String;
+begin
+  x := FDQuery.FieldByName('titulo').AsString;
+  y := DBEdit1.Text;
+  inherited;
+  if y = '' then
+  begin
+    FDQuery.Locate('titulo', x, []);
+    ButtonAlterarClick(Self);
+    ShowMessage('Cadastre pelo menos um autor para esse livro!');
+  end;
+
 end;
 
 procedure TFormLivro.FormCreate(Sender: TObject);

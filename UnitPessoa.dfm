@@ -6,23 +6,31 @@ inherited FormPessoa: TFormPessoa
   TextHeight = 13
   inherited PageControl1: TPageControl
     Width = 751
+    ExplicitWidth = 751
     inherited TabSheetConsulta: TTabSheet
+      ExplicitWidth = 743
       inherited Panel1: TPanel
         Width = 743
+        ExplicitWidth = 743
         inherited EditBusca: TEdit
           Width = 694
+          ExplicitWidth = 694
         end
         inherited ButtonBusca: TButton
           Left = 644
+          ExplicitLeft = 644
         end
       end
       inherited Panel2: TPanel
         Width = 743
+        ExplicitWidth = 743
         inherited ButtonFechar: TButton
           Left = 644
+          ExplicitLeft = 644
         end
         inherited ButtonSelecionar: TButton
           Left = 565
+          ExplicitLeft = 565
         end
       end
       inherited DBGrid1: TDBGrid
@@ -58,6 +66,7 @@ inherited FormPessoa: TFormPessoa
       end
     end
     inherited TabSheetCadastro: TTabSheet
+      ExplicitWidth = 743
       object Label1: TLabel [0]
         Left = 24
         Top = 24
@@ -100,8 +109,10 @@ inherited FormPessoa: TFormPessoa
       end
       inherited Panel3: TPanel
         Width = 743
+        ExplicitWidth = 743
         inherited ButtonFechar2: TButton
           Left = 652
+          ExplicitLeft = 652
         end
       end
       object DBEdit1: TDBEdit
@@ -197,6 +208,217 @@ inherited FormPessoa: TFormPessoa
       Origin = 'telefone'
       EditMask = '(99) 99999-9990;1;_'
       Size = 30
+    end
+  end
+  inherited frxReport: TfrxReport
+    Left = 524
+    Top = 200
+    Datasets = <
+      item
+        DataSet = frxDBDataset
+        DataSetName = 'frxDBDataset'
+      end>
+    Variables = <>
+    Style = <>
+    inherited Page1: TfrxReportPage
+      inherited ReportTitle1: TfrxReportTitle
+        inherited Memo1: TfrxMemoView
+          Left = 281.386008500000000000
+          Top = 7.559060000000000000
+          Width = 177.637910000000000000
+          Memo.UTF8W = (
+            'LISTAGEM DE PESSOAS')
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Top = 52.913420000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'C'#243'digo')
+          ParentFont = False
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 68.031540000000000000
+          Top = 52.913420000000000000
+          Width = 207.874150000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Nome')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 302.362400000000000000
+          Top = 52.913420000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'CPF')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 430.866420000000000000
+          Top = 52.913420000000000000
+          Width = 139.842610000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Email')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 52.913420000000000000
+          Width = 143.622140000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Telefone')
+          ParentFont = False
+        end
+      end
+      inherited MasterData1: TfrxMasterData
+        Height = 34.015770000000000000
+        object frxDBDatasetidpessoa: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 7.559060000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          DataField = 'idpessoa'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxDBDataset."idpessoa"]')
+          ParentFont = False
+        end
+        object frxDBDatasetnomepessoa: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 68.031540000000000000
+          Top = 7.559060000000000000
+          Width = 207.874150000000000000
+          Height = 18.897650000000000000
+          DataField = 'nomepessoa'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."nomepessoa"]')
+          ParentFont = False
+        end
+        object frxDBDatasetcpf: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 302.362400000000000000
+          Top = 7.559060000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          DataField = 'cpf'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."cpf"]')
+          ParentFont = False
+        end
+        object frxDBDatasetemail: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 430.866420000000000000
+          Top = 7.559060000000000000
+          Width = 139.842610000000000000
+          Height = 18.897650000000000000
+          DataField = 'email'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."email"]')
+          ParentFont = False
+        end
+        object frxDBDatasettelefone: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 7.559060000000000000
+          Width = 143.622140000000000000
+          Height = 18.897650000000000000
+          DataField = 'telefone'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."telefone"]')
+          ParentFont = False
+        end
+      end
+      inherited PageFooter1: TfrxPageFooter
+        Top = 249.448980000000000000
+        inherited Memo2: TfrxMemoView
+          Left = 645.921677000000000000
+        end
+      end
     end
   end
 end

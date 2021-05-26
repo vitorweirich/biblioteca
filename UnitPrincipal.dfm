@@ -13,8 +13,26 @@ object FormPrincipal: TFormPrincipal
   Menu = MainMenu1
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object LabelUsuario: TLabel
+    Left = 0
+    Top = 0
+    Width = 751
+    Height = 23
+    Align = alTop
+    Alignment = taRightJustify
+    Caption = 'LabelUsuario'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitLeft = 645
+    ExplicitWidth = 106
+  end
   object MainMenu1: TMainMenu
     Left = 512
     Top = 8
@@ -53,6 +71,18 @@ object FormPrincipal: TFormPrincipal
     end
     object Relatrio1: TMenuItem
       Caption = 'Relat'#243'rio'
+      object LivrosporCategoria1: TMenuItem
+        Caption = 'Livros por Categoria'
+        OnClick = LivrosporCategoria1Click
+      end
+      object LivrosporPessoa1: TMenuItem
+        Caption = 'Livros por Pessoa'
+        OnClick = LivrosporPessoa1Click
+      end
+      object EmprstimosPendentes1: TMenuItem
+        Caption = 'Empr'#233'stimos Pendentes'
+        OnClick = EmprstimosPendentes1Click
+      end
     end
   end
   object FDConnection: TFDConnection

@@ -132,6 +132,22 @@
             <Form>FormBaseEmprestimoDevolucao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UnitBaseRel.pas">
+            <Form>FormBaseRel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitRelLivrosCategoria.pas">
+            <Form>FormRelLivrosCategoria</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitRelLivrosPessoa.pas">
+            <Form>FormRelLivrosPessoa</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitRelEmprestimosPendentes.pas">
+            <Form>FormRelEmprestimosPendentes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -155,6 +171,8 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReport VCL Trial\LibD26\dclfrxIBX26.bpl">FastReport VCL IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReport VCL Trial\LibD26\dclfsIBX26.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">

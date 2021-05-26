@@ -1,0 +1,39 @@
+inherited FormRelLivrosPessoa: TFormRelLivrosPessoa
+  Caption = 'Livros por Pessoa'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 112
+    ExplicitWidth = 394
+    inherited ButtonImprimir: TButton
+      ExplicitLeft = 64
+    end
+    inherited ButtonFechar: TButton
+      ExplicitLeft = 256
+    end
+  end
+  inherited frxReport: TfrxReport
+    Datasets = <
+      item
+        DataSet = frxDBDataset
+        DataSetName = 'frxDBDataset'
+      end>
+    Variables = <>
+    Style = <>
+  end
+  inherited FDQuery: TFDQuery
+    SQL.Strings = (
+      'select * from (select * from emprestimo where '
+      'emprestimo.idpessoa = :idpessoa) as emprestimo '
+      'join pessoa on pessoa.idpessoa = emprestimo.idpessoa '
+      'join livro on emprestimo.idlivro = livro.idlivro')
+    ParamData = <
+      item
+        Name = 'IDPESSOA'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+end

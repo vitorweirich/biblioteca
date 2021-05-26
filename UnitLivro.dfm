@@ -472,6 +472,189 @@ inherited FormLivro: TFormLivro
     Left = 412
     Top = 136
   end
+  inherited frxReport: TfrxReport
+    Datasets = <
+      item
+        DataSet = frxDBDataset
+        DataSetName = 'frxDBDataset'
+      end>
+    Variables = <>
+    Style = <>
+    inherited Page1: TfrxReportPage
+      inherited ReportTitle1: TfrxReportTitle
+        inherited Memo1: TfrxMemoView
+          Left = 288.945068500000000000
+          Top = 7.559060000000000000
+          Width = 162.519790000000000000
+          Memo.UTF8W = (
+            'LISTAGEM DE LIVROS')
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 52.913420000000000000
+          Width = 52.913420000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'C'#243'digo')
+          ParentFont = False
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 52.913420000000000000
+          Width = 226.771800000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'T'#237'tulo')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 313.700990000000000000
+          Top = 52.913420000000000000
+          Width = 188.976500000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Editora')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 510.236550000000000000
+          Top = 52.913420000000000000
+          Width = 124.724490000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Categoria')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 646.299630000000000000
+          Top = 52.913420000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'N'#186' P'#225'ginas')
+          ParentFont = False
+        end
+      end
+      inherited MasterData1: TfrxMasterData
+        object frxDBDatasettitulo: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Width = 226.771800000000000000
+          Height = 18.897650000000000000
+          DataField = 'titulo'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."titulo"]')
+        end
+        object frxDBDatasetnomeeditora: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 313.700990000000000000
+          Top = -3.779530000000000000
+          Width = 188.976500000000000000
+          Height = 18.897650000000000000
+          DataField = 'nomeeditora'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."nomeeditora"]')
+        end
+        object frxDBDatasetnomecategoria: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 510.236550000000000000
+          Top = -3.779530000000000000
+          Width = 124.724490000000000000
+          Height = 18.897650000000000000
+          DataField = 'nomecategoria'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."nomecategoria"]')
+        end
+        object frxDBDatasetidlivro: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 11.338590000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          DataField = 'idlivro'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxDBDataset."idlivro"]')
+          ParentFont = False
+        end
+        object frxDBDatasetnumeropaginas: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 646.299630000000000000
+          Top = -3.779530000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'numeropaginas'
+          DataSet = frxDBDataset
+          DataSetName = 'frxDBDataset'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset."numeropaginas"]')
+        end
+      end
+      inherited PageFooter1: TfrxPageFooter
+        inherited Memo2: TfrxMemoView
+          Left = 645.921677000000000000
+        end
+      end
+    end
+  end
   object FDQueryAutores: TFDQuery
     Active = True
     IndexFieldNames = 'idlivro'

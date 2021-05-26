@@ -9,7 +9,11 @@ uses
   UnitCategoria in 'UnitCategoria.pas' {FormCategoria},
   UnitLivro in 'UnitLivro.pas' {FormLivro},
   UnitPessoa in 'UnitPessoa.pas' {FormPessoa},
-  UnitEmprestimoDevolucao in 'UnitEmprestimoDevolucao.pas' {FormBaseEmprestimoDevolucao};
+  UnitEmprestimoDevolucao in 'UnitEmprestimoDevolucao.pas' {FormBaseEmprestimoDevolucao},
+  UnitBaseRel in 'UnitBaseRel.pas' {FormBaseRel},
+  UnitRelLivrosCategoria in 'UnitRelLivrosCategoria.pas' {FormRelLivrosCategoria},
+  UnitRelLivrosPessoa in 'UnitRelLivrosPessoa.pas' {FormRelLivrosPessoa},
+  UnitRelEmprestimosPendentes in 'UnitRelEmprestimosPendentes.pas' {FormRelEmprestimosPendentes};
 
 {$R *.res}
 
@@ -17,5 +21,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormRelEmprestimosPendentes, FormRelEmprestimosPendentes);
   Application.Run;
 end.

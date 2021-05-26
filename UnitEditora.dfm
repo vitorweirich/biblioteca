@@ -4,15 +4,6 @@ inherited FormEditora: TFormEditora
   TextHeight = 13
   inherited PageControl1: TPageControl
     ActivePage = TabSheetCadastro
-    inherited TabSheetConsulta: TTabSheet
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      inherited Panel1: TPanel
-        inherited EditBusca: TEdit
-          ExplicitWidth = 590
-        end
-      end
-    end
     inherited TabSheetCadastro: TTabSheet
       object Label1: TLabel [0]
         Left = 24
@@ -67,6 +58,31 @@ inherited FormEditora: TFormEditora
       FieldName = 'nomeeditora'
       Origin = 'nomeeditora'
       Size = 60
+    end
+  end
+  inherited frxReport: TfrxReport
+    Datasets = <
+      item
+        DataSet = frxDBDataset
+        DataSetName = 'frxDBDataset'
+      end>
+    Variables = <>
+    Style = <>
+    inherited Page1: TfrxReportPage
+      inherited ReportTitle1: TfrxReportTitle
+        inherited Memo1: TfrxMemoView
+          Left = 275.716713500000000000
+          Top = 7.559060000000000000
+          Width = 188.976500000000000000
+          Memo.UTF8W = (
+            'LISTAGEM DE EDITORAS')
+        end
+      end
+      inherited PageFooter1: TfrxPageFooter
+        inherited Memo2: TfrxMemoView
+          Left = 645.921677000000000000
+        end
+      end
     end
   end
 end

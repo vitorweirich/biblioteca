@@ -1,0 +1,32 @@
+inherited FormRelLivrosCategoria: TFormRelLivrosCategoria
+  Caption = 'Livros por Categoria'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 112
+    ExplicitWidth = 394
+    inherited ButtonImprimir: TButton
+      ExplicitLeft = 64
+    end
+    inherited ButtonFechar: TButton
+      ExplicitLeft = 256
+    end
+  end
+  inherited frxReport: TfrxReport
+    Datasets = <
+      item
+        DataSet = frxDBDataset
+        DataSetName = 'frxDBDataset'
+      end>
+    Variables = <>
+    Style = <>
+  end
+  inherited FDQuery: TFDQuery
+    Active = True
+    SQL.Strings = (
+      'select * from livro '
+      'join categoria on livro.idcategoria = categoria.idcategoria'
+      'order by categoria.nomecategoria, livro.titulo')
+  end
+end

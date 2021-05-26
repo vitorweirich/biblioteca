@@ -8,7 +8,7 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, frxClass, frxDBSet;
 
 type
   TFormBase = class(TForm)
@@ -32,6 +32,8 @@ type
     ButtonFechar2: TButton;
     FDQuery: TFDQuery;
     DataSource: TDataSource;
+    frxReport: TfrxReport;
+    frxDBDataset: TfrxDBDataset;
     procedure ButtonFecharClick(Sender: TObject);
     procedure ButtonInserirClick(Sender: TObject);
     procedure ButtonAlterarClick(Sender: TObject);
@@ -42,6 +44,7 @@ type
     procedure ButtonBuscaClick(Sender: TObject);
     procedure EditBuscaChange(Sender: TObject);
     procedure ButtonSelecionarClick(Sender: TObject);
+    procedure ButtonImprimirClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -115,6 +118,11 @@ end;
 procedure TFormBase.ButtonFecharClick(Sender: TObject);
 begin
  Close;
+end;
+
+procedure TFormBase.ButtonImprimirClick(Sender: TObject);
+begin
+  frxReport.ShowReport();
 end;
 
 procedure TFormBase.ButtonInserirClick(Sender: TObject);
